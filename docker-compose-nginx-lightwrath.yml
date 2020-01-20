@@ -1,0 +1,14 @@
+version: '3'
+services:
+   lightwrath:
+      container_name: lightwrath-com
+      image: nginx
+      restart: unless-stopped
+      ports:
+       - "80:80/tcp"
+      environment:
+       - TERM=xterm
+      hostname: lightwrathcom
+      volumes:
+       - /mnt/RAID/personal/Programs/lightwrath-com/nginx-logs:/var/log/nginx:z
+       - /mnt/RAID/personal/Programs/lightwrath-com/nginx-html:/usr/local/nginx/html:z
